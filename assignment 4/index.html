@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Factorial Calculator -->
+    <h2>Factorial Calculator</h2>
+
+    <input type="number" id="factorial" placeholder="Enter a number">
+    <button onclick="calculateFactorial()">Calculate</button>
+
+    <p id="factorialResult"></p>
+
+    <!-- Decimal to Binary Converter -->
+    <h2>Base 10 to Base 2</h2>
+    <input type="number" id="decimal" placeholder="Enter a number">
+    <button onclick="decimalToBinary()">Calculate</button>
+
+    <p id="binaryResult"></p>
+
+    <h2>Base 2 to Base 10</h2>
+
+    <input type="text" id="binary" placeholder="Enter binary number">
+    <button onclick="binaryToDecimal()">Convert</button>
+
+    <p id="decimalResult"></p>
+
+<!-- Sum of Factorial Numbers -->
+    <h2>Sum of Factorial Numbers</h2>
+
+    <input type="number" id="factorialNumber" placeholder="Enter a number">
+    <button onclick="sumNumbers()">Calculate</button>
+
+    <p id="result"></p>
+
+<!-- Evaluation table -->
+
+<h2>Evaluation Table</h2>
+
+    <input type="number" id="evaluationTable" placeholder="Enter a number">
+
+    <select id="operation">
+        <option value="addition">Addition</option>
+        <option value="subtraction">Subtraction</option>
+        <option value="multiplication">Multiplication</option>
+        <option value="division">Division</option>
+    </select>
+
+    <button onclick="calculate()">Generate</button>
+
+    <p id="evaluationResult"></p>
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

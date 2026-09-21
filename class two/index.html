@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="show"></div>
+    <div id="sho1"></div>
+    <div id="sho2"></div>
+
+    <input type="number" placeholder="Enter your age" id="age" />
+    <button onclick="checkEligibility()">Check Eligibility</button>
+
+    <input type="number" placeholder="Enter your score" id="number" />
+    <button onclick="checkNumber()">Check Number</button>
+
+    <br>
+
+    <input type="number" placeholder="Enter the temperature" id="temperature" />
+    <p id="temperatureResult"></p>
+    <!-- <br> -->
+    <button onclick="checkTemperature()">Check Temperature</button>
+
+    <br>
+
+    <input type="number" placeholder="Enter your password" id="password" />
+    <p id="passwordResult"></p>
+    <!-- <br> -->
+    <button onclick="checkPassword()">Check Password</button>
+
+    <br>
+
+    <input type="number" placeholder="Enter amount" id="amount" />
+    <p id="amountResult"></p>
+    <!-- <br> -->
+    <button onclick="checkAmount()">Check Amount</button>
+
+    <br>
+
+    <input type="number" id="oddnumber" placeholder="Enter a number" />
+    <p id="result"></p>
+    <button onclick="checkoddNumber()">Check</button>
+
+    <br>
+
+    <input type="number" id="withdrawal" placeholder="Enter an amount" />
+    <p id="withdrawalResult"></p>
+    <button onclick="checkWithdrawal()">Check</button>
+
+    <br>
+
+    <input type="number" id="discountAmount" placeholder="Enter amount spent">
+    <p id="discountResult"></p>
+    <button onclick="checkDiscount()">Check Discount</button>
+
+    <br>
+
+    <input type="number" id="score" placeholder="Enter score"> 
+    <input type="number" id="attendance" placeholder="Enter attendance percentage"> 
+    <p id="schoolResult"></p>
+    <button onclick="checkclassEligibility()">Check</button> 
+
+
+    <script>
+
+        function checkclassEligibility() {
+            let score = Number(document.getElementById("score").value);
+            let attendance = Number(document.getElementById("attendance").value);
+            if (score >= 50 && attendance >= 75) {
+                document.getElementById("schoolResult").innerHTML = "Student can proceed to the next level.";
+            } else {
+                document.getElementById("schoolResult").innerHTML = "Student cannot proceed to the next level.";
+            }
+        }
+
+        function checkDiscount() {
+        let amount = Number(document.getElementById("discountAmount").value);
+        if (amount >= 100000) { document.getElementById("discountResult").innerHTML = 
+        "You qualify for a 10% discount."; }
+        else { document.getElementById("discountResult").innerHTML =
+        "You do not qualify for a discount."; }
+        }
+
+        function checkWithdrawal() {
+        let withdrawalInput = document.getElementById("withdrawal").value;
+        if (withdrawalInput >= 100000) {
+        console.log("Withdrawal approved");
+        document.getElementById("withdrawalResult").innerHTML =
+            "Withdrawal approved";
+        } else {
+        console.log("Denied, go and hustle more money");
+        document.getElementById("withdrawalResult").innerHTML =
+            "Denied, go and hustle more money";
+        }
+      }
+
+
+      function checkoddNumber() {
+        let number = Number(document.getElementById("oddnumber").value);
+        if (number % 2 === 0) {
+          document.getElementById("result").innerHTML = "Even";
+          console.log("Even");
+        } else {
+          document.getElementById("result").innerHTML = "Odd";
+          console.log("Odd");
+        }
+      }
+
+      function checkTemperature() {
+        let temperatureInput = document.getElementById("temperature").value;
+        if (temperatureInput >= 30) {
+          console.log("It's a hot day");
+          document.getElementById("temperatureResult").innerHTML =
+            "It's a hot day";
+        } else {
+          console.log("It's a cool day");
+          document.getElementById("temperatureResult").innerHTML =
+            "It's a cool day";
+        }
+      }
+
+      function checkAmount() {
+        let amountInput = document.getElementById("amount").value;
+        if (amountInput >= 50000) {
+          console.log("You are qualified for the free delivery");
+          document.getElementById("amountResult").innerHTML =
+            "You are qualified for the free delivery";
+        } else {
+          console.log(
+            "You are not qualified, purchase more to get free delivery",
+          );
+          document.getElementById("amountResult").innerHTML =
+            "You are not qualified, purchase more to get free delivery";
+        }
+      }
+
+      function checkPassword() {
+        let passwordInput = document.getElementById("password").value;
+        if (passwordInput === "12345") {
+          console.log("Password is correct");
+          document.getElementById("passwordResult").innerHTML =
+            "Password is correct";
+        } else {
+          console.log("Password is incorrect");
+          document.getElementById("passwordResult").innerHTML =
+            "Password is incorrect";
+        }
+      }
+
+      function checkNumber() {
+        let numberInput = document.getElementById("number").value;
+        if (numberInput >= 50) {
+          console.log("You Passed");
+          document.getElementById("sho2").innerHTML = "You Passed";
+        } else {
+          console.log("You failed Woefully");
+          document.getElementById("sho2").innerHTML = "You failed Woefully";
+        }
+      }
+
+      if (2 == 2) {
+        console.log("true");
+      } else {
+        console.log("false");
+      }
+
+      let carKey = "Voice Command";
+      let car = "Tesla";
+
+      if (carKey === "Voice Command") {
+        console.log(car + " Opens");
+        document.getElementById("show").innerHTML = car + " Opens";
+      } else {
+        console.log("You cannot drive the car");
+      }
+
+      // class work: A  youth must be 18 years or older to vote.  Write a program that checks if a youth is eligible to vote or not. If the youth is eligible, print "You are eligible to vote", otherwise print "You are not eligible to vote".
+
+      //write a program that asks user for a numer, if the number is greater than or equals to 0, display " Number is Positibe", otherwise display "Number is Negative".
+      let age = 20;
+      if (age >= 18) {
+        console.log("You are eligible to vote");
+        document.getElementById("show").innerHTML = "You are eligible to vote";
+      } else {
+        console.log("You are not eligible to vote");
+        document.getElementById("show").innerHTML =
+          "You are not eligible to vote";
+      }
+
+      function checkEligibility() {
+        let ageInput = document.getElementById("age").value;
+        if (ageInput >= 18) {
+          console.log("You are eligible to vote");
+          document.getElementById("show").innerHTML =
+            "You are eligible to vote";
+        } else {
+          console.log("You are not eligible to vote");
+          document.getElementById("show").innerHTML =
+            "You are not eligible to vote";
+        }
+      }
+
+      let number = -5;
+      if (number >= 0) {
+        console.log("Number is Positive");
+        document.getElementById("sho1").innerHTML = "Number is Positive";
+      } else {
+        console.log("Number is Negative");
+        document.getElementById("sho1").innerHTML = "Number is Negative";
+      }
+    </script>
+  </body>
+</html>

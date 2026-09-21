@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Student Grading System</h2>
+  <input type="number" id="score" placeholder="Enter score" />
+  <button onclick="calculateGrade()">Check Grade</button>
+  <p id="scoreResult"></p>
+
+  <br />
+
+  <h2>Check if a Number is Odd</h2>
+
+  <input type="number" id="oddnumber" placeholder="Enter a number" />
+  <button onclick="checkOdd()">Check</button>
+
+  <p id="result"></p>
+
+  <br />
+
+  <h2>Check if a Number is Even</h2>
+
+  <input type="number" id="evennumber" placeholder="Enter a number" />
+  <button onclick="checkEven()">Check</button>
+
+  <p id="evenResult"></p>
+
+  <br />
+
+  <h2>Fizz Buzz Program</h2>
+  <input type="number" id="fizznumber" placeholder="Enter a number" />
+  <button onclick="fizzBuzz()">Check</button>
+  <p id="fizzResult"></p>
+
+  <script>
+    function calculateGrade() {
+      let score = Number(document.getElementById("score").value);
+
+      if (document.getElementById("score").value === "") {
+        document.getElementById("scoreResult").innerHTML =
+          "Please input a number.";
+        return;
+      }
+
+      if (score >= 70 && score <= 100) {
+        document.getElementById("scoreResult").innerHTML =
+          "Grade: A (Excellent)";
+      } else if (score >= 60 && score < 70) {
+        document.getElementById("scoreResult").innerHTML =
+          "Grade: B (Very Good)";
+      } else if (score >= 50 && score < 60) {
+        document.getElementById("scoreResult").innerHTML =
+          "Grade: C (Good)";
+      } else if (score >= 45 && score < 50) {
+        document.getElementById("scoreResult").innerHTML =
+          "Grade: D (Pass)";
+      } else if (score >= 40 && score < 45) {
+        document.getElementById("scoreResult").innerHTML =
+          "Grade: E (Poor)";
+      } else if (score >= 0 && score < 40) {
+        document.getElementById("scoreResult").innerHTML =
+          "Grade: F (Fail)";
+      } else if (score < 0 || score > 100) {
+        document.getElementById("scoreResult").innerHTML =
+          "Invalid score. Please enter a score between 0 and 100.";
+      }
+    }
+
+    function checkOdd() {
+      let number = document.getElementById("oddnumber").value;
+      if (document.getElementById("oddnumber").value === "") {
+        document.getElementById("result").innerHTML =
+          "Please input a number.";
+        return;
+      }
+      
+      if (number % 2 != 0) {
+        document.getElementById("result").innerHTML =
+          number + " is an odd number.";
+      } else {
+        document.getElementById("result").innerHTML =
+          number + " is not an odd number.";
+      }
+    }
+
+    function checkEven() {
+      let number = document.getElementById("evennumber").value;
+
+      if (document.getElementById("evennumber").value === "") {
+        document.getElementById("evenResult").innerHTML =
+          "Please input a number.";
+        return;
+      }
+
+      if (number % 2 == 0) {
+        document.getElementById("evenResult").innerHTML =
+          number + " is an even number.";
+      } else {
+        document.getElementById("evenResult").innerHTML =
+          number + " is not an even number.";
+      }
+    }
+
+    function fizzBuzz() {
+      let number = document.getElementById("fizznumber").value;
+
+      if (number !== "") {
+        if (number % 3 == 0) {
+          document.getElementById("fizzResult").innerHTML = "Fizz";
+        } else if (number % 5 == 0) {
+          document.getElementById("fizzResult").innerHTML = "Buzz";
+        } else if (number % 3 == 0 && number % 5 == 0) {
+          document.getElementById("fizzResult").innerHTML = "Fizz Buzz";
+        }
+      } else {
+        document.getElementById("fizzResult").innerHTML = "Please enter a number.";
+      }
+    }
+  </script>
+</body>
+
+</html>

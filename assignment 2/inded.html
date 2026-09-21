@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignemnt 2</title>
+</head>
+<body>
+    <h2>Address Converter</h2>
+    <input type="text" id="address" placeholder="Enter address">
+    <button onclick="convertAddress()">Convert</button>
+    <p id="addressResult"></p>
+
+    <br>
+
+    <h2>Essay Space Cleaner</h2> 
+    <textarea id="essay" placeholder="Enter your essay"></textarea> 
+    <button onclick="cleanEssay()">Clean Essay</button> 
+    <p id="essayResult"></p>
+
+    <br>
+
+    <h2>Item Discount Checker</h2> 
+    <input type="number" id="items" placeholder="Number of items"> 
+    <button onclick="checkItems()">Check</button> 
+    <p id="itemsResult"></p>
+
+    <br>
+
+    <h2>Temperature Categorizer</h2> 
+    <input type="number" id="temperature" placeholder="Enter temperature"> 
+    <button onclick="checkTemperature()">Check</button> 
+    <p id="temperatureResult"></p>
+
+    <br>
+
+    <h2>BMI Calculator</h2> 
+    <input type="number" id="weight" placeholder="Weight in kg"> 
+    <input type="number" id="height" placeholder="Height in metres"> 
+    <button onclick="calculateBMI()">Calculate BMI</button> 
+    <p id="bmiResult"></p>
+
+    <br>
+
+    <h2>Username Validator</h2> 
+    <input type="text" id="username" placeholder="Enter username"> 
+    <button onclick="checkUsername()">Check</button> 
+    <p id="usernameResult"></p>
+
+
+    <br>
+
+    <h2>Luggage Weight Checker</h2> 
+    <input type="number" id="weight" placeholder="Enter luggage weight"> 
+    <button onclick="checkLuggage()">Check</button> 
+    <p id="luggageResult"></p>
+
+
+    <br>
+
+    <h2>OAU Email Checker</h2> 
+    <input type="email" id="email" placeholder="Enter email"> 
+    <button onclick="checkEmail()">Check</button> 
+    <p id="emailResult"></p>
+
+    <br>
+
+    <h2>Student Grading System</h2> 
+    <input type="number" id="score" placeholder="Enter score"> 
+    <button onclick="calculateGrade()">Check Grade</button> 
+    <p id="scoreResult"></p>
+
+    <br>
+
+    <h2>Supermarket Discount Calculator</h2> 
+    <input type="number" id="amount" placeholder="Enter purchase amount"> 
+    <button onclick="calculatePrice()">Calculate</button> 
+    <p id="discountResult"></p>
+
+    <br>
+
+    <h2>JAMB Eligibility Checker</h2> 
+    <input type="number" id="score" placeholder="Enter JAMB score"> 
+    <input type="text" id="course" placeholder="Enter course"> 
+    <button onclick="checkEligibility()">Check</button> 
+    <p id="jambResult"></p>
+
+    <br>
+
+    <h2>Voter Eligibility Checker</h2> 
+    <input type="number" id="birthYear" placeholder="Enter birth year"> 
+    <button onclick="checkVotingEligibility()">Check</button> 
+    <p id="ageResult"></p>
+
+    <script>
+
+        function convertAddress() { 
+            let address = document.getElementById("address").value; 
+            let lowerAddress = address.toLowerCase(); 
+            document.getElementById("addressResult").innerHTML = lowerAddress; 
+        }
+
+
+        function cleanEssay() { 
+            let essay = document.getElementById("essay").value; 
+            let cleanEssay = essay.trim().replace(/\s+/g, " "); 
+            document.getElementById("essayResult").innerHTML = cleanEssay; 
+        }
+
+        function checkItems() { 
+            let items = Number(document.getElementById("items").value); 
+            if (items % 2 === 0) { 
+                document.getElementById("itemsResult").innerHTML = "You qualify for a discount."; 
+            } 
+                else 
+                { 
+                    document.getElementById("itemsResult").innerHTML = "You do not qualify for a discount."; 
+                } 
+            }
+
+        function checkTemperature() { 
+            let temperature = Number(document.getElementById("temperature").value); 
+            if (temperature < 0) { 
+                document.getElementById("temperatureResult").innerHTML = "It's freezing!"; 
+            } else if (temperature < 10) { 
+                document.getElementById("temperatureResult").innerHTML = "It's quite cold."; 
+            } else if (temperature < 20) { 
+                document.getElementById("temperatureResult").innerHTML = "It's a bit chilly."; 
+            } else if (temperature < 30) { 
+                document.getElementById("temperatureResult").innerHTML = "It's warm."; 
+            } else { 
+                document.getElementById("temperatureResult").innerHTML = "It's hot!"; 
+            } 
+        }
+
+        function calculateBMI() { 
+            let weight = Number(document.getElementById("weight").value); 
+            let height = Number(document.getElementById("height").value); 
+            let bmi = weight / (height * height); 
+            let category; 
+            if (bmi < 18.5) {
+                category = "Underweight"; } 
+                else if (bmi < 25) 
+                { category = "Normal"; } 
+                else if (bmi < 30) { 
+                    category = "Overweight"; } 
+                    else { category = "Obese"; } 
+                    document.getElementById("bmiResult").innerHTML = "BMI: " + bmi.toFixed(2) + "<br>Category: " + category; }
+
+
+        function checkUsername() { 
+            let username = document.getElementById("username").value; 
+            let pattern = /^[A-Za-z0-9_]+$/; 
+            if (pattern.test(username)) { 
+                document.getElementById("usernameResult").innerHTML = "Valid username."; 
+            } 
+            else { 
+                document.getElementById("usernameResult").innerHTML = "Invalid username."; 
+            } 
+        }
+
+        function checkLuggage() { 
+            let weight = Number(document.getElementById("weight").value); 
+            if (weight < 20) { 
+                document.getElementById("luggageResult").innerHTML = "Underweight"; 
+            } 
+            else if (weight <= 30) { 
+                document.getElementById("luggageResult").innerHTML = "Allowed"; } 
+            else { document.getElementById("luggageResult").innerHTML = "Overweight"; 
+            } 
+        }
+
+        function checkEmail() { 
+            let email = document.getElementById("email").value; 
+            let valid = email.endsWith("@oauife.edu.ng"); 
+            document.getElementById("emailResult").innerHTML = valid; 
+        }
+
+        function calculateGrade() { 
+            let score = Number(document.getElementById("score").value); 
+            if (score >= 70 && score <= 100) { 
+                document.getElementById("scoreResult").innerHTML = "Grade: A (Excellent)"; 
+            } 
+            else if (score >= 60) { 
+                document.getElementById("scoreResult").innerHTML = "Grade: B (Very Good)"; 
+            } 
+            else if (score >= 50) { 
+                document.getElementById("scoreResult").innerHTML = "Grade: C (Good)"; 
+            } 
+            else if (score >= 40) { 
+                document.getElementById("scoreResult").innerHTML = "Grade: D (Pass)"; 
+            } 
+            else { 
+                document.getElementById("scoreResult").innerHTML = "Grade: F (Fail)"; 
+            } 
+        }
+
+        function calculatePrice() { 
+            let amount = Number(document.getElementById("amount").value); 
+            let discountRate; if (amount < 5000) { discountRate = 0; } 
+            else if (amount <= 10000) { discountRate = 0.05; } 
+            else if (amount <= 20000) { discountRate = 0.10; } 
+            else { discountRate = 0.15; } 
+            let discount = amount * discountRate; 
+            let finalPrice = amount - discount; 
+            document.getElementById("discountResult").innerHTML = "Discount: ₦" + discount.toFixed(2) + "<br>Final Price: ₦" + finalPrice.toFixed(2); 
+        }
+
+
+        function checkEligibility() { 
+            let score = Number(document.getElementById("score").value); 
+            let course = document.getElementById("course").value.toLowerCase(); 
+            let requiredScore; 
+            if (score >= requiredScore) { 
+                document.getElementById("jambResult").innerHTML = "You are eligible for " + course + "."; } 
+                else { document.getElementById("jambResult").innerHTML = "You are not eligible for " + course + "."; 
+            } 
+            if (course === "medicine") { 
+                requiredScore = 280; } 
+            else if (course === "engineering") { 
+                requiredScore = 250; } 
+            else if (course === "sciences") { 
+                requiredScore = 220; } 
+            else if (course === "arts") { 
+                    requiredScore = 200; } 
+            else { 
+                document.getElementById("jambResult").innerHTML = "Invalid course."; 
+                return; 
+            } 
+        }
+
+
+        function checkVotingEligibility() { 
+            let birthYear = Number(document.getElementById("birthYear").value); 
+            let currentYear = new Date().getFullYear(); 
+            let age = "2026" - birthYear; 
+            if (age >= 18) { 
+                document.getElementById("ageResult").innerHTML = "You are eligible to vote."; 
+            } else { 
+                document.getElementById("ageResult").innerHTML = "You are not eligible to vote."; 
+            } 
+        }
+    </script>
+</body>
+</html>
